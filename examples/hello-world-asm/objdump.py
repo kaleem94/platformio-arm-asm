@@ -9,12 +9,13 @@ def make_something(source, target, env):
         name, ext = os.path.splitext(x.name)
         objfile = builddir+"/src/"+x.name
         lssfile = srcdir+name+".lss"
-        env.Execute("arm-linux-gnueabihf-objdump -d /"+objfile+" -l > "+lssfile)
+        env.Execute("arm-none-eabi-objdump -d /"+objfile+" -l > "+lssfile)
 
 env.AddPostAction("$BUILD_DIR/${PROGNAME}.elf", make_something)
 
 env.AddPostAction(
     "$BUILD_DIR/${PROGNAME}.elf",
-    env.VerboseAction("arm-linux-gnueabihf-objdump -Mno-aliases,numeric -h -S $BUILD_DIR/${PROGNAME}.elf > $BUILD_DIR/${PROGNAME}.lss",
+    env.VerboseAction("arm-none-eabi-objdump -h -S $BUILD_DIR/${PROGNAME}.elf > $BUILD_DIR/${PROGNAME}.lss",
+    # env.VerboseAction("arm-none-eabi-objdump -Mno-aliases,numeric -h -S $BUILD_DIR/${PROGNAME}.elf > $BUILD_DIR/${PROGNAME}.lss",
     "Creating $BUILD_DIR/${PROGNAME}.lss")
 )
