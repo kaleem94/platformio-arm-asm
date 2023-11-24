@@ -39,9 +39,9 @@ env.Replace(
 
 pioframework = env.get("PIOFRAMEWORK", [])
 if "glibc" in pioframework:
-    env.Replace(_BINPREFIX="riscv64-linux-gnu-")
+    env.Replace(_BINPREFIX="arm-linux-gnueabihf-")
 else: 
-    env.Replace(_BINPREFIX="riscv64-unknown-elf-")
+    env.Replace(_BINPREFIX="arm-none-eabi-")
 
 #
 # Target: Build elf only

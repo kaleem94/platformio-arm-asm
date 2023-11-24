@@ -1,6 +1,6 @@
 {
-  "name": "platformio-arm assembly",
-  "title": "Arm asm",
+  "name": "platform_arm",
+  "title": "Platform Arm asm",
   "description": "Toolchain for cross-development for arm system",
   "homepage": " ",
   "license": "Apache-2.0",
