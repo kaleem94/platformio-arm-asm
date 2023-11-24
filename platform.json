@@ -1,13 +1,13 @@
 {
-  "name": "linux_riscv",
-  "title": "Linux RISC-V",
-  "description": "Toolchain for cross-development for Linux RISC-V systems",
+  "name": "platformio-arm assembly",
+  "title": "Arm asm",
+  "description": "Toolchain for cross-development for arm system",
   "homepage": " ",
   "license": "Apache-2.0",
   "keywords": [
     "dev-platform",
     "Linux",
-    "RISC-V"
+    "Arm"
   ],
   "engines": {
     "platformio": "^5"
@@ -19,10 +19,10 @@
     }
   },
   "packages": {
-    "toolchain-riscv": {
+    "toolchain-gccarmnoneeabi": {
       "type": "toolchain",
       "owner": "platformio",
-      "version": "~1.80300.0"
+      "version": "~1.120301.0"
     }
   }
 }
