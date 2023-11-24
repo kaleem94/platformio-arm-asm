@@ -1,16 +1,16 @@
-.section .text
-.globl  _start
+.text            
+.global _start
 _start:
-        li      a0, 1
-        la      a1, msgbegin 
-        lbu     a2, msgsize 
-        li      a7, 64
-        ecall
-        li      a7, 93
-        ecall
+    mov r0, #1
+    ldr r1, =message
+    ldr r2, =len
+    mov r7, #4
+    swi 0
 
-.section .rodata
-msgbegin:
-.ascii  "Hello World!\n"
-msgsize:
-.byte   .-msgbegin
+    mov r7, #1
+    swi 0
+
+.data
+message:
+    .asciz "hello world\n"
+len = .-message    
